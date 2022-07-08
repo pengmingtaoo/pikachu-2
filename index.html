@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>测试</title>
+</head>
+<body>
+<style id="demo2"></style>
+<div id="demo"></div>
+<div id="buttons">
+    <button id="buttonPause">暂停</button>
+    <button id="buttonPlay">开始</button>
+    <button id="buttonSlow">慢速</button>
+    <button id="buttonNormal">中速</button>
+    <button id="buttonFast">快速</button>
+</div>
+
+
+<style>
+    #buttons{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 100px;
+    }
+    #buttons>button{
+        margin-bottom: 30px;
+    }
+    #demo2{
+        display: none;
+    }
+    #demo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        overflow-y: auto;
+    }
+    #demo::-webkit-scrollbar{
+        display: none;
+    }
+    #html{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+    }
+    @media (max-width: 500px) {
+        .eye-left{
+            transform: translateX(-100px);
+        }
+        .eye-right{
+            transform: translateX(90px);
+        }
+        .eye-left::before,.eye-right::before{
+            width: 25px;
+            height: 25px;
+            left: 8px;
+        }
+        .mouth{
+            width: 166px;
+            height: 166px;
+            top:144px;
+            margin-left: -63px;
+        }
+
+        .mouth-left{
+            border-right: none;
+            border-bottom-left-radius: 80px 60px;
+            transform: rotate(-20deg);
+            left:4px;
+        }
+        .down{
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .mouth-down{
+            width: 160px;
+            height: 250px;
+            bottom:-130px;
+            margin-left: -80px;
+            border-radius:200px;
+        }
+        .face-left{
+            margin-left:-160px;
+        }
+        .face-right{
+            margin-left: 130px;
+        }
+    }
+</style>
+<div id="html">
+   <div class="skin">
+       <div class="main">
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="nose"></div>
+        <div class="face-left"></div>
+        <div class="face-right"></div>
+        <div class="mouth">
+            <div class="up">
+                <div class="mouth-left"></div>
+                <div class="mouth-right"></div>
+            </div>
+            <div class="down">
+                <div class="mouth-up">
+                    <div class="mouth-down"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
